@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -11,9 +12,11 @@ function Header() {
     return (
 
         <Container>
-            <HeaderLogo>
-                <img src='https://pngimg.com/uploads/amazon/amazon_PNG25.png' alt="logo" />
-            </HeaderLogo>
+            <Link to='/'>
+                <HeaderLogo>
+                    <img src='/images/amazon-logo.png' alt="logo" />
+                </HeaderLogo>
+            </Link>
 
             <HeaderOptionAddress>
                 <LocationOnIcon />
@@ -42,10 +45,14 @@ function Header() {
                     <OptionLineTwo>& Order</OptionLineTwo>
                 </HeaderOption>
 
+
                 <HeaderOptionCart >
-                    <ShoppingBasketIcon />
-                    <CartCount >4</CartCount>
+                    <Tag to='/cart'>
+                        <ShoppingBasketIcon style={{ color: 'white' }} />
+                        <CartCount >0</CartCount>
+                    </Tag>
                 </HeaderOptionCart>
+
 
             </HeaderNavItems>
 
@@ -73,6 +80,9 @@ const HeaderLogo = styled.div`
 img{
     width: 100px;
     margin-left: 11px;
+    @media screen and (max-width:600px){
+width: 60px;
+}
 }
 `
 
@@ -80,6 +90,10 @@ const HeaderOptionAddress = styled.div`
 padding-left: 9px;
 display: flex;
 align-items: center;
+@media screen and (max-width:600px){
+    display: none;
+}
+
 
 `
 
@@ -105,12 +119,21 @@ margin-left: 4px;
 :focus-within{
     box-shadow: 0 0 0 3px #F90;
 }
+@media screen and (max-width:600px){
+flex-grow: inherit;
+}
+@media screen and (max-width:300px){
+    height: 30px;
+}
 `
 
 const HeaderSearchInput = styled.input`
 flex-grow: 1;
 border:0;
-
+@media screen and (max-width:300px){
+width: 10px;
+display: none;
+}
 :focus{
     border: none;
 }
@@ -124,6 +147,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 cursor: pointer;
+@media screen and (max-width:300px){
+    width: 40px;
+}
 
 `
 
@@ -136,16 +162,25 @@ display: flex;
 
 const HeaderOption = styled.div`
 padding:10px 9px 10px 9px;
+@media screen and (max-width:600px){
+    display: none;
+}
 
 `
 
 const HeaderOptionCart = styled.div`
 cursor: pointer;
 display: flex;
+
 align-items: center;
 padding-right: 9px;
 
 
+
+`
+
+const Tag = styled(Link)`
+display: flex;
 `
 
 const CartCount = styled.div`
@@ -154,4 +189,5 @@ color: #F90;
 padding-left: 4px;
 font-weight: 700;
 color: #f08804;
+
 `

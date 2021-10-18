@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Product({ title, price, imgUrl, rating }) {
+function Product({ title, price, imgUrl, rating, id }) {
+
     return (
         <Container>
             <Title>{title}</Title>
@@ -14,7 +15,7 @@ function Product({ title, price, imgUrl, rating }) {
                 }
             </Rating>
             <CenterSection>
-                <Image src={imgUrl} />
+                <Image src={`/images/${imgUrl}`} />
                 <AddToCartButton>
                     Add to Cart
                 </AddToCartButton>
@@ -36,12 +37,7 @@ border-radius: 3px;
 max-height: 400px ;
 display: flex;
 flex-direction: column;
-transition: all 0.5s;
 
-&:hover{
-    transform: scale(1.03);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
 `
 
 const Title = styled.span`
@@ -59,6 +55,9 @@ display: flex;
 const Image = styled.img`
 max-height: 200px;
 object-fit: contain;
+@media screen and (max-width:350px){
+    max-width: 140px;
+}
 `
 
 const CenterSection = styled.div`
@@ -74,6 +73,12 @@ border: 2px solid #a88734;
 border-radius: 2px;
 padding: 10px;
 cursor: pointer;
+transition: all 0.5s;
+
+&:hover{
+    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
 
 `

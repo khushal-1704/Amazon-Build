@@ -5,34 +5,30 @@ import Product from './Product';
 
 
 function Home() {
-    const [products, setProducts] = useState([])
-
-
 
     return (
         <Container>
             <Banner />
             <Content>
                 <RowOne>
-                    <Product title='2021 Apple iPad Pro with Apple M1 chip ' price='₹1,20,000.00' rating={4} imgUrl="https://m.media-amazon.com/images/I/81Y5WuARqpS._SL1500_.jpg" />
+                    <Product title='2021 Apple iPad Pro with Apple M1 chip ' price='₹1,20,000.00' rating={4} imgUrl="ipad.jpg" id={1} />
 
-                    <Product title='New Apple iPhone 12 Pro (512GB) - Gold' price='₹1,39,900.00' rating={5} imgUrl='https://m.media-amazon.com/images/I/71cSV-RTBSL._SL1500_.jpg' />
+                    <Product title='New Apple iPhone 12 Pro (512GB) - Gold' price='₹1,39,900.00' rating={5} imgUrl="iphone.jpg" id={2} />
 
-                    <Product title='Samsung Galaxy A52s 5G (Violet, 6GB RAM, 128GB Storage)' price='₹35,999.00' rating={4} imgUrl='
-                    https://m.media-amazon.com/images/I/914kfP8ImAL._SL1500_.jpg' />
+                    <Product title='Samsung Galaxy A52s 5G (Violet, 6GB RAM, 128GB Storage)' price='₹35,999.00' rating={4} imgUrl='phone1.jpg' id={3} />
 
                 </RowOne>
 
                 <RowOne>
-                    <Product title='AmazonBasics 127cm (50 inch)' price='₹36,999' rating={2} imgUrl='https://m.media-amazon.com/images/I/71AqQyCMmeL._SL1240_.jpg' />
-                    <Product title='eAirtec 164 cm (65 Inches) 4K Ultra HD Smart ' price='₹51,000.00' rating={3} imgUrl='https://m.media-amazon.com/images/I/71h-XEvqZsL._SL1500_.jpg' />
+                    <Product title='AmazonBasics 127cm (50 inch)' price='₹36,999' rating={2} imgUrl='tv.jpg' id={4} />
+                    <Product title='eAirtec 164 cm (65 Inches) 4K Ultra HD Smart ' price='₹51,000.00' rating={3} imgUrl='tv2.jpg' id={5} />
 
                 </RowOne>
                 <RowOne>
-                    <Product title='ASUS ROG Zephyrus G14 (2021), ' price='₹1,14,990.00' rating={4} imgUrl='https://m.media-amazon.com/images/I/61f-pIrfGzS._SL1024_.jpg' />
-                    <Product title='ASUS ROG Strix Scar 17 (2020)' price='₹1,49,592.00' rating={3} imgUrl='https://m.media-amazon.com/images/I/711V0Z3HWGL._SL1500_.jpg' />
-                    <Product title='MSI Bravo 15 Ryzen 7 4800H 15.6"' price='₹74,990.00' rating={5} imgUrl='https://m.media-amazon.com/images/I/71b46EnIzBL._SL1500_.jpg' />
-                    <Product title='ASUS ROG Strix Scar 17 (2021)' price='₹2,75,000.00' rating={3} imgUrl='https://m.media-amazon.com/images/I/81QbtqiRKeL._SL1500_.jpg' />
+                    <Product title='ASUS ROG Zephyrus G14 (2021), ' price='₹1,14,990.00' rating={4} imgUrl='lp1.jpg' id={6} />
+                    <Product title='ASUS ROG Strix Scar 17 (2020)' price='₹1,49,592.00' rating={3} imgUrl='lp2.jpg' id={7} />
+                    <Product title='MSI Bravo 15 Ryzen 7 4800H 15.6"' price='₹74,990.00' rating={5} imgUrl='lp3.jpg' id={8} />
+                    <Product title='ASUS ROG Strix Scar 17 (2021)' price='₹2,75,000.00' rating={3} imgUrl='lp4.jpg' id={9} />
 
                 </RowOne>
 
@@ -42,7 +38,7 @@ function Home() {
     )
 }
 
-export default Home
+export default Home;
 
 
 const Container = styled.div`
@@ -68,11 +64,11 @@ flex-direction: column;
 padding-left: 10px ;
 padding-right: 10px;
 margin-top: -350px;
-display:flex ;
 `
 
 const RowOne = styled.div`
 display: flex;
+flex-wrap: wrap;
 `
 
 
